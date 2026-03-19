@@ -5,9 +5,8 @@ using namespace std;
 int main() {
     int64_t ySize1, xSize1, ySize2, xSize2;
     cin >> ySize1 >> xSize1 >> ySize2 >> xSize2;
-
-    const auto m1 = new int[ySize1 * xSize1];
-    const auto m2 = new int[ySize2 * xSize2];
+    unique_ptr<int[]> m1(new int[ySize1 * xSize1]);
+    unique_ptr<int[]> m2(new int[ySize2 * xSize2]);
 
     for (int y = 0; y < ySize1; ++y) {
         for (int x = 0; x < xSize1; ++x) {
@@ -24,8 +23,6 @@ int main() {
     if (xSize1 != ySize2) {
         cout << "Matrix multiplication failed.\n";
 
-        delete[] m1;
-        delete[] m2;
         return 0;
     }
 
@@ -41,7 +38,4 @@ int main() {
         }
         cout << '\n';
     }
-
-    delete[] m1;
-    delete[] m2;
 }
