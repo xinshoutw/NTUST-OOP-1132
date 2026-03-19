@@ -33,6 +33,7 @@ AlwaysBreakTemplateDeclarations: Yes
 FixNamespaceComments: true
 
 # Alignment
+ReflowComments: false
 BreakBeforeBraces: Custom
 BraceWrapping:
   AfterCaseLabel: true
