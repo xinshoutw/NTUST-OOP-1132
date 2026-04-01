@@ -103,7 +103,7 @@ public:
             }
         }
 
-        fixReversedNumber(result);
+        fixReversedNumber(result, negative);
         reverse(result.begin(), result.end());
         return result;
     }
@@ -134,9 +134,7 @@ public:
         return result;
     }
 
-    static void fixReversedNumber(string& num) {
-        // remove redundant '-'
-        bool negative = false;
+    static void fixReversedNumber(string& num, bool negative) {
         while (num.back() == '-') {
             negative ^= 1;
             num.pop_back();
